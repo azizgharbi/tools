@@ -7,11 +7,11 @@ $description = "
 
  Example:
 
- php idnAscii2idnUnicode.php www.уk.com
+ php idnAscii2idnUnicode.php www.УК.com
 
  Output:
 
- www.xn--k-bub.com
+ xn--j1ar.com
 
 ";
 
@@ -20,4 +20,8 @@ if (!isset($argv[1])) {
     exit();
 }
 
-echo idn_to_ascii(iconv(mb_detect_encoding($argv[1], mb_detect_order(), true), "UTF-8", $argv[1]));
+$input_encoding = mb_detect_encoding($argv[1], mb_detect_order(), true);
+
+$input_utf8 = iconv($input_encoding, "UTF-8", $argv[1]);
+
+echo idn_to_ascii($input_utf8, 0, INTL_IDNA_VARIANT_UTS46);

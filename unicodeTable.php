@@ -1,13 +1,13 @@
 <?php
 
 $description = "
- Usage: php unicode-table-generator.php [DECIMAL_NUMBER]
+ Usage: php unicodeTable.php [DECIMAL_NUMBER]
 
- Generate unicode table.
+ Generate Unicode table.
 
  Example:
 
- php unicode-table-generator.php 5
+ php unicodeTable.php 5
 
  Output:
 

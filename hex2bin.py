@@ -18,10 +18,9 @@ except IOError as e:
 try:
     eof = False
     while not eof:
-        hex_string = f.read().replace('\n', '')
-        binary_string = binascii.unhexlify(hex_string)
+        hex_string = f.read().replace('\n', '').replace('\r\n', '')
         if hex_string:
-            print binary_string            
+            print binascii.unhexlify(hex_string)
         else:
             eof = True
 finally:
